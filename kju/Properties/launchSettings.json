@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Kyoo (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Kyoo (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
