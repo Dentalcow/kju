@@ -1,1 +1,1 @@
-C:\git\Kyoo\Kyoo\kju.csproj;x64
+C:\git\kju\kju\kju.csproj;x64
