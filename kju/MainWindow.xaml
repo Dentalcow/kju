@@ -28,9 +28,6 @@
                        Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10">
-                <Button x:Name="ImportFilesButton" 
-                        Content="Import Files" 
-                        Click="ImportFiles_Click"/>
                 <Button x:Name="AddCueButton" 
                         Content="Add Cue" 
                         Click="AddCue_Click"/>

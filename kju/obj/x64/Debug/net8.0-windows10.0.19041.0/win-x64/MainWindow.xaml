@@ -28,13 +28,10 @@
                        Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10">
-                <Button x:ConnectionId='11' x:Name="ImportFilesButton" 
-                        Content="Import Files" 
-                                                 />
-                <Button x:ConnectionId='12' x:Name="AddCueButton" 
+                <Button x:ConnectionId='11' x:Name="AddCueButton" 
                         Content="Add Cue" 
                                             />
-                <Button x:ConnectionId='13' x:Name="RemoveCueButton" 
+                <Button x:ConnectionId='12' x:Name="RemoveCueButton" 
                         Content="Remove Cue" 
                                                />
             </StackPanel>

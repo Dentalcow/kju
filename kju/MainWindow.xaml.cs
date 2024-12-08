@@ -23,6 +23,7 @@ namespace kju
         private int currentCueIndex = -1;
         private IntPtr m_windowHandle;
         private DispatcherQueue m_dispatcherQueue = null!;
+        private VideoWindow? videoWindow;
 
         public MainWindow()
         {
@@ -36,6 +37,12 @@ namespace kju
 
             mediaPlayer = new MediaPlayer();
             mediaPlayer.PlaybackSession.PositionChanged += UpdateProgressBar;
+
+            // Initialize and show the video window
+            InitializeVideoWindow();
+
+            // Handle the Closed event to close all windows
+            this.Closed += MainWindow_Closed;
         }
 
         private void InitializeWindowHandling()
@@ -45,6 +52,39 @@ namespace kju
 
             // Initialize dispatcher queue
             m_dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        }
+
+        private void InitializeVideoWindow()
+        {
+            videoWindow = new VideoWindow();
+            videoWindow.Closed += (s, e) => videoWindow = null;
+            videoWindow.Activate(); // Use Activate instead of Show
+
+            // Set the MediaPlayer source to a blank media to display a black screen
+            videoWindow.MediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/black.mp4"));
+            videoWindow.MediaPlayer.Play();
+
+            // Add MediaEnded event handler
+            videoWindow.MediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
+
+            // Enable hardware acceleration
+            videoWindow.MediaPlayer.RealTimePlayback = true;
+        }
+
+        private void MediaPlayer_MediaEnded(MediaPlayer sender, object args)
+        {
+            m_dispatcherQueue.TryEnqueue(() =>
+            {
+                // Set the MediaPlayer source to the splash screen
+                videoWindow.MediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/splashscreen.mp4"));
+                videoWindow.MediaPlayer.Play();
+            });
+        }
+
+        private void MainWindow_Closed(object sender, WindowEventArgs e)
+        {
+            // Close the video window if it is open
+            videoWindow?.Close();
         }
 
         private async void Settings_Click(object sender, RoutedEventArgs e)
@@ -121,10 +161,7 @@ namespace kju
                 HorizontalAlignment = HorizontalAlignment.Stretch
             };
             defaultTypeComboBox.Items.Add("Audio");
-            defaultTypeComboBox.Items.Add("Music");
-            defaultTypeComboBox.Items.Add("SFX");
-            defaultTypeComboBox.Items.Add("Voice");
-            defaultTypeComboBox.Items.Add("Other");
+            defaultTypeComboBox.Items.Add("Video");
             defaultTypeComboBox.SelectedItem = AppSettings.DefaultCueType;
             defaultTypeComboBox.SelectionChanged += (s, args) =>
             {
@@ -206,80 +243,6 @@ namespace kju
             await dialog.ShowAsync();
         }
 
-        private async void ImportFiles_Click(object sender, RoutedEventArgs e)
-        {
-            await ImportFilesWithPicker();
-        }
-
-        private async Task ImportFilesWithPicker()
-        {
-            try
-            {
-                // Create file picker
-                var picker = new FileOpenPicker();
-                picker.SuggestedStartLocation = PickerLocationId.MusicLibrary;
-                picker.FileTypeFilter.Add(".mp3");
-                picker.FileTypeFilter.Add(".wav");
-                picker.FileTypeFilter.Add(".flac");
-                picker.ViewMode = PickerViewMode.List;
-
-                // Initialize the picker with the window handle
-                WinRT.Interop.InitializeWithWindow.Initialize(picker, m_windowHandle);
-
-                // Pick files
-                var files = await picker.PickMultipleFilesAsync();
-                if (files != null && files.Count > 0)
-                {
-                    await ImportFilesWithTypeSelection(files);
-                }
-            }
-            catch (Exception ex)
-            {
-                await DisplayErrorMessage($"File import error: {ex.Message}");
-            }
-        }
-
-        private async Task ImportFilesWithTypeSelection(IReadOnlyList<StorageFile> files)
-        {
-            var dialog = new ContentDialog
-            {
-                Title = "Select Cue Type",
-                PrimaryButtonText = "Import",
-                CloseButtonText = "Cancel",
-                XamlRoot = this.Content.XamlRoot
-            };
-
-            var typeComboBox = new ComboBox
-            {
-                PlaceholderText = "Select Cue Type"
-            };
-            typeComboBox.Items.Add("Audio");
-            typeComboBox.Items.Add("Music");
-            typeComboBox.Items.Add("SFX");
-            typeComboBox.Items.Add("Voice");
-            typeComboBox.Items.Add("Other");
-
-            dialog.Content = new StackPanel
-            {
-                Children = {
-                        new TextBlock { Text = "Choose a type for these files:" },
-                        typeComboBox
-                    }
-            };
-
-            var result = await dialog.ShowAsync();
-
-            if (result == ContentDialogResult.Primary && typeComboBox.SelectedItem != null)
-            {
-                string selectedType = typeComboBox.SelectedItem.ToString() ?? "Audio";
-
-                foreach (var file in files.OrderBy(f => f.Name))
-                {
-                    AddCue(file.Path, selectedType);
-                }
-            }
-        }
-
         private async void AddCue_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -308,10 +271,7 @@ namespace kju
                 HorizontalAlignment = HorizontalAlignment.Stretch
             };
             typeComboBox.Items.Add("Audio");
-            typeComboBox.Items.Add("Music");
-            typeComboBox.Items.Add("SFX");
-            typeComboBox.Items.Add("Voice");
-            typeComboBox.Items.Add("Other");
+            typeComboBox.Items.Add("Video");
 
             var filePickerButton = new Button
             {
@@ -334,6 +294,8 @@ namespace kju
                     picker.FileTypeFilter.Add(".mp3");
                     picker.FileTypeFilter.Add(".wav");
                     picker.FileTypeFilter.Add(".flac");
+                    picker.FileTypeFilter.Add(".mp4");
+                    picker.FileTypeFilter.Add(".mkv");
 
                     // Initialize the picker with the window handle
                     WinRT.Interop.InitializeWithWindow.Initialize(picker, m_windowHandle);
@@ -433,22 +395,40 @@ namespace kju
 
         private void PlayPause_Click(object sender, RoutedEventArgs e)
         {
-            var playbackState = mediaPlayer.PlaybackSession.PlaybackState;
+            if (currentCueIndex >= 0 && currentCueIndex < Cues.Count)
+            {
+                var currentCue = Cues[currentCueIndex];
+                var playbackState = currentCue.Type == "Video" ? videoWindow?.MediaPlayer.PlaybackSession.PlaybackState : mediaPlayer.PlaybackSession.PlaybackState;
 
-            if (playbackState == MediaPlaybackState.Playing)
-            {
-                mediaPlayer.Pause();
-                PlayPauseButton.Content = "Play";
-            }
-            else if (playbackState == MediaPlaybackState.Paused)
-            {
-                mediaPlayer.Play();
-                PlayPauseButton.Content = "Pause";
-            }
-            else
-            {
-                PlayAudio();
-                PlayPauseButton.Content = "Pause";
+                if (playbackState == MediaPlaybackState.Playing)
+                {
+                    if (currentCue.Type == "Video")
+                    {
+                        videoWindow?.MediaPlayer.Pause();
+                    }
+                    else
+                    {
+                        mediaPlayer.Pause();
+                    }
+                    PlayPauseButton.Content = "Play";
+                }
+                else if (playbackState == MediaPlaybackState.Paused)
+                {
+                    if (currentCue.Type == "Video")
+                    {
+                        videoWindow?.MediaPlayer.Play();
+                    }
+                    else
+                    {
+                        mediaPlayer.Play();
+                    }
+                    PlayPauseButton.Content = "Pause";
+                }
+                else
+                {
+                    PlayAudio();
+                    PlayPauseButton.Content = "Pause";
+                }
             }
         }
 
@@ -481,19 +461,52 @@ namespace kju
 
                 if (currentCueIndex >= 0 && currentCueIndex < Cues.Count)
                 {
-                    mediaPlayer.Source = MediaSource.CreateFromUri(new Uri(Cues[currentCueIndex].FilePath));
-                    mediaPlayer.Play();
-                    PlayPauseButton.Content = "Pause";
+                    var currentCue = Cues[currentCueIndex];
+                    if (currentCue.Type == "Video")
+                    {
+                        PlayVideo(currentCue.FilePath);
+                    }
+                    else
+                    {
+                        mediaPlayer.Source = MediaSource.CreateFromUri(new Uri(currentCue.FilePath));
+                        mediaPlayer.Play();
+                        PlayPauseButton.Content = "Pause";
+                    }
                 }
             }
+        }
+
+        private void PlayVideo(string filePath)
+        {
+            if (videoWindow == null)
+            {
+                videoWindow = new VideoWindow();
+                videoWindow.Closed += (s, e) => videoWindow = null;
+                videoWindow.Activate(); // Use Activate instead of Show
+            }
+
+            videoWindow.MediaPlayer.Source = MediaSource.CreateFromUri(new Uri(filePath));
+            videoWindow.MediaPlayer.Play();
+            PlayPauseButton.Content = "Pause";
+
+            // Update the progress bar for the video player
+            videoWindow.MediaPlayer.PlaybackSession.PositionChanged += UpdateProgressBar;
         }
 
         // Update the media playback position when the progress bar value changes
         private void ProgressBar_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if (mediaPlayer != null && mediaPlayer.PlaybackSession != null)
+            if (currentCueIndex >= 0 && currentCueIndex < Cues.Count)
             {
-                mediaPlayer.PlaybackSession.Position = TimeSpan.FromSeconds(e.NewValue);
+                var currentCue = Cues[currentCueIndex];
+                if (currentCue.Type == "Video" && videoWindow?.MediaPlayer != null)
+                {
+                    videoWindow.MediaPlayer.PlaybackSession.Position = TimeSpan.FromSeconds(e.NewValue);
+                }
+                else if (mediaPlayer != null && mediaPlayer.PlaybackSession != null)
+                {
+                    mediaPlayer.PlaybackSession.Position = TimeSpan.FromSeconds(e.NewValue);
+                }
             }
         }
 
