@@ -9,8 +9,11 @@
     ".NETCoreApp,Version=v8.0/win-x64": {
       "kju/1.0.0": {
         "dependencies": {
+          "Aspose.Slides.NET": "24.12.0",
+          "DocumentFormat.OpenXml": "3.2.0",
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.1742",
           "Microsoft.WindowsAppSDK": "1.6.241114003",
+          "System.Drawing.Common": "9.0.0",
           "WinUI.TableView": "1.2.2",
           "Microsoft.Web.WebView2.Core.Projection": "1.0.2651.64",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "8.0.11",
@@ -752,6 +755,17 @@
           }
         }
       },
+      "Aspose.Slides.NET/24.12.0": {
+        "dependencies": {
+          "System.Drawing.Common": "9.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Aspose.Slides.dll": {
+            "assemblyVersion": "24.12.0.0",
+            "fileVersion": "24.12.0.0"
+          }
+        }
+      },
       "CommunityToolkit.Common/8.2.1": {
         "runtime": {
           "lib/net6.0/CommunityToolkit.Common.dll": {
@@ -801,10 +815,40 @@
           }
         }
       },
+      "DocumentFormat.OpenXml/3.2.0": {
+        "dependencies": {
+          "DocumentFormat.OpenXml.Framework": "3.2.0"
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml.Framework/3.2.0": {
+        "dependencies": {
+          "System.IO.Packaging": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      },
       "Microsoft.Web.WebView2/1.0.2651.64": {
         "native": {
           "runtimes/win-x64/native/WebView2Loader.dll": {
             "fileVersion": "1.0.2651.64"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/9.0.0": {
+        "runtime": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -901,6 +945,29 @@
           }
         }
       },
+      "System.Drawing.Common/9.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "9.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
+          }
+        }
+      },
+      "System.IO.Packaging/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
       "WinUI.TableView/1.2.2": {
         "dependencies": {
           "CommunityToolkit.WinUI.Behaviors": "8.0.240109",
@@ -939,6 +1006,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Aspose.Slides.NET/24.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xK9PdLBqBBLb+nzUaOpMk9bmTGupIIgnIVE/O5xxpDQ4hD2Arz4e4To08ha4Jyg9x7bgNdT2EE2GUB4MPGFE3A==",
+      "path": "aspose.slides.net/24.12.0",
+      "hashPath": "aspose.slides.net.24.12.0.nupkg.sha512"
+    },
     "CommunityToolkit.Common/8.2.1": {
       "type": "package",
       "serviceable": true,
@@ -967,12 +1041,33 @@
       "path": "communitytoolkit.winui.extensions/8.0.240109",
       "hashPath": "communitytoolkit.winui.extensions.8.0.240109.nupkg.sha512"
     },
+    "DocumentFormat.OpenXml/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eDBT9G0sAWUvjgE8l8E5bGCFXgxCZXIecQ8dqUnj2PyxyMR5eBmLahqRRw3Q7uSKM3cKbysaL2mEY0JJbEEOEA==",
+      "path": "documentformat.openxml/3.2.0",
+      "hashPath": "documentformat.openxml.3.2.0.nupkg.sha512"
+    },
+    "DocumentFormat.OpenXml.Framework/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e1neOKqRnSHUom4JQEorAoZ67aiJOp6+Xzsu0fc6IYfFcgQn6roo+w6i2w//N2u/5ilEfvLr35bNO9zaIN7r7g==",
+      "path": "documentformat.openxml.framework/3.2.0",
+      "hashPath": "documentformat.openxml.framework.3.2.0.nupkg.sha512"
+    },
     "Microsoft.Web.WebView2/1.0.2651.64": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-f5sc/vcAoTCTEW7Nqzp4galAuTRguZViw8ksn+Nx2uskEBPm0/ubzy6gVjvXS/P96jLS89C8T9I0hPc417xpNg==",
       "path": "microsoft.web.webview2/1.0.2651.64",
       "hashPath": "microsoft.web.webview2.1.0.2651.64.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z8FfGIaoeALdD+KF44A2uP8PZIQQtDGiXsOLuN8nohbKhkyKt7zGaZb+fKiCxTuBqG22Q7myIAioSWaIcOOrOw==",
+      "path": "microsoft.win32.systemevents/9.0.0",
+      "hashPath": "microsoft.win32.systemevents.9.0.0.nupkg.sha512"
     },
     "Microsoft.Windows.SDK.BuildTools/10.0.26100.1742": {
       "type": "package",
@@ -994,6 +1089,20 @@
       "sha512": "sha512-rGIUCwQZB1degP2+Cc7hBbGOwuokyUxMh97umT+dpqJ8X71y2DKsXrKzDDQc8lKdWbloJbVDpzB9X42yZiS8tA==",
       "path": "microsoft.xaml.behaviors.winui.managed/2.0.9",
       "hashPath": "microsoft.xaml.behaviors.winui.managed.2.0.9.nupkg.sha512"
+    },
+    "System.Drawing.Common/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uoozjI3+dlgKh2onFJcz8aNLh6TRCPlLSh8Dbuljc8CdvqXrxHOVysJlrHvlsOCqceqGBR1wrMPxlnzzhynktw==",
+      "path": "system.drawing.common/9.0.0",
+      "hashPath": "system.drawing.common.9.0.0.nupkg.sha512"
+    },
+    "System.IO.Packaging/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KYkIOAvPexQOLDxPO2g0BVoWInnQhPpkFzRqvNrNrMhVT6kqhVr0zEb6KCHlptLFukxnZrjuMVAnxK7pOGUYrw==",
+      "path": "system.io.packaging/8.0.1",
+      "hashPath": "system.io.packaging.8.0.1.nupkg.sha512"
     },
     "WinUI.TableView/1.2.2": {
       "type": "package",
