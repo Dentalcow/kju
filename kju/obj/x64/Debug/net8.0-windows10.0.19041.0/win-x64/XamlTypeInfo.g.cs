@@ -15,17 +15,17 @@ namespace kju
     public partial class App : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2411")]
-        private global::Kyoo.kju_XamlTypeInfo.XamlMetaDataProvider __appProvider;
+        private global::kju.kju_XamlTypeInfo.XamlMetaDataProvider __appProvider;
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2411")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private global::Kyoo.kju_XamlTypeInfo.XamlMetaDataProvider _AppProvider
+        private global::kju.kju_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
             get
             {
                 if (__appProvider == null)
                 {
-                    __appProvider = new global::Kyoo.kju_XamlTypeInfo.XamlMetaDataProvider();
+                    __appProvider = new global::kju.kju_XamlTypeInfo.XamlMetaDataProvider();
                 }
                 return __appProvider;
             }
@@ -63,7 +63,7 @@ namespace kju
     }
 }
 
-namespace Kyoo.kju_XamlTypeInfo
+namespace kju.kju_XamlTypeInfo
 {
     /// <summary>
     /// Main class for providing metadata for the app or library
@@ -72,15 +72,15 @@ namespace Kyoo.kju_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed partial class XamlMetaDataProvider : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::Kyoo.kju_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
+        private global::kju.kju_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
-        private global::Kyoo.kju_XamlTypeInfo.XamlTypeInfoProvider Provider
+        private global::kju.kju_XamlTypeInfo.XamlTypeInfoProvider Provider
         {
             get
             {
                 if (_provider == null)
                 {
-                    _provider = new global::Kyoo.kju_XamlTypeInfo.XamlTypeInfoProvider();
+                    _provider = new global::kju.kju_XamlTypeInfo.XamlTypeInfoProvider();
                 }
                 return _provider;
             }
@@ -130,7 +130,7 @@ namespace Kyoo.kju_XamlTypeInfo
                 {
                     xamlType = CreateXamlType(typeIndex);
                 }
-                var userXamlType = xamlType as global::Kyoo.kju_XamlTypeInfo.XamlUserType;
+                var userXamlType = xamlType as global::kju.kju_XamlTypeInfo.XamlUserType;
                 if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
                 {
                     global::Microsoft.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
@@ -169,7 +169,7 @@ namespace Kyoo.kju_XamlTypeInfo
                 {
                     xamlType = CreateXamlType(typeIndex);
                 }
-                var userXamlType = xamlType as global::Kyoo.kju_XamlTypeInfo.XamlUserType;
+                var userXamlType = xamlType as global::kju.kju_XamlTypeInfo.XamlUserType;
                 if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
                 {
                     global::Microsoft.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
@@ -226,7 +226,7 @@ namespace Kyoo.kju_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[39];
+            _typeNameTable = new string[41];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -264,10 +264,12 @@ namespace Kyoo.kju_XamlTypeInfo
             _typeNameTable[34] = "Int32";
             _typeNameTable[35] = "String";
             _typeNameTable[36] = "kju.ApplicationSettings";
-            _typeNameTable[37] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[38] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[37] = "kju.VideoWindow";
+            _typeNameTable[38] = "Windows.Media.Playback.MediaPlayer";
+            _typeNameTable[39] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[40] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[39];
+            _typeTable = new global::System.Type[41];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -305,8 +307,10 @@ namespace Kyoo.kju_XamlTypeInfo
             _typeTable[34] = typeof(global::System.Int32);
             _typeTable[35] = typeof(global::System.String);
             _typeTable[36] = typeof(global::kju.ApplicationSettings);
-            _typeTable[37] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[38] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[37] = typeof(global::kju.VideoWindow);
+            _typeTable[38] = typeof(global::Windows.Media.Playback.MediaPlayer);
+            _typeTable[39] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[40] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -354,7 +358,9 @@ namespace Kyoo.kju_XamlTypeInfo
         private object Activate_32_Collection() { return new global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>(); }
         private object Activate_33_AudioCue() { return new global::kju.AudioCue(); }
         private object Activate_36_ApplicationSettings() { return new global::kju.ApplicationSettings(); }
-        private object Activate_37_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_37_VideoWindow() { return new global::kju.VideoWindow(); }
+        private object Activate_38_MediaPlayer() { return new global::Windows.Media.Playback.MediaPlayer(); }
+        private object Activate_39_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_TableView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI.TableView.TableView).TypeHandle);
         private void StaticInitializer_7_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IList).TypeHandle);
@@ -377,8 +383,10 @@ namespace Kyoo.kju_XamlTypeInfo
         private void StaticInitializer_32_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>).TypeHandle);
         private void StaticInitializer_33_AudioCue() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.AudioCue).TypeHandle);
         private void StaticInitializer_36_ApplicationSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.ApplicationSettings).TypeHandle);
-        private void StaticInitializer_37_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_38_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_37_VideoWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.VideoWindow).TypeHandle);
+        private void StaticInitializer_38_MediaPlayer() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.Media.Playback.MediaPlayer).TypeHandle);
+        private void StaticInitializer_39_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_40_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -422,7 +430,7 @@ namespace Kyoo.kju_XamlTypeInfo
             var newItem = (global::kju.AudioCue)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_38_IList(object instance, object item)
+        private void VectorAdd_40_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -431,8 +439,8 @@ namespace Kyoo.kju_XamlTypeInfo
 
         private global::Microsoft.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::Kyoo.kju_XamlTypeInfo.XamlUserType userType;
+            global::kju.kju_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::kju.kju_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
@@ -440,7 +448,7 @@ namespace Kyoo.kju_XamlTypeInfo
             {
 
             case 0:   //  Microsoft.UI.Xaml.Controls.XamlControlsResources
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.ResourceDictionary"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.ResourceDictionary"));
                 userType.Activator = Activate_0_XamlControlsResources;
                 userType.StaticInitializer = StaticInitializer_0_XamlControlsResources;
                 userType.DictionaryAdd = MapAdd_0_XamlControlsResources;
@@ -449,19 +457,19 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 1:   //  Microsoft.UI.Xaml.ResourceDictionary
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Object
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 3:   //  Boolean
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 4:   //  WinUI.TableView.TableView
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ListView"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ListView"));
                 userType.Activator = Activate_4_TableView;
                 userType.StaticInitializer = StaticInitializer_4_TableView;
                 userType.AddMemberName("ItemsSource");
@@ -485,22 +493,22 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 5:   //  Microsoft.UI.Xaml.Controls.ListView
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 6:   //  Microsoft.UI.Xaml.Controls.ItemsControl
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 7:   //  System.Collections.IList
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.StaticInitializer = StaticInitializer_7_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 8:   //  WinUI.TableView.TableViewColumnsCollection
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.ObservableCollection`1<WinUI.TableView.TableViewColumn>"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.ObservableCollection`1<WinUI.TableView.TableViewColumn>"));
                 userType.StaticInitializer = StaticInitializer_8_TableViewColumnsCollection;
                 userType.CollectionAdd = VectorAdd_8_TableViewColumnsCollection;
                 userType.SetIsReturnTypeStub();
@@ -508,7 +516,7 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 9:   //  System.Collections.ObjectModel.ObservableCollection`1<WinUI.TableView.TableViewColumn>
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<WinUI.TableView.TableViewColumn>"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<WinUI.TableView.TableViewColumn>"));
                 userType.Activator = Activate_9_ObservableCollection;
                 userType.StaticInitializer = StaticInitializer_9_ObservableCollection;
                 userType.CollectionAdd = VectorAdd_9_ObservableCollection;
@@ -516,7 +524,7 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 10:   //  System.Collections.ObjectModel.Collection`1<WinUI.TableView.TableViewColumn>
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_10_Collection;
                 userType.StaticInitializer = StaticInitializer_10_Collection;
                 userType.CollectionAdd = VectorAdd_10_Collection;
@@ -524,7 +532,7 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 11:   //  WinUI.TableView.TableViewColumn
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
                 userType.StaticInitializer = StaticInitializer_11_TableViewColumn;
                 userType.AddMemberName("Header");
                 userType.AddMemberName("Width");
@@ -542,24 +550,24 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 12:   //  Microsoft.UI.Xaml.DependencyObject
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 13:   //  Microsoft.UI.Xaml.GridLength
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.StaticInitializer = StaticInitializer_13_GridLength;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 14:   //  System.ValueType
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.StaticInitializer = StaticInitializer_14_ValueType;
                 xamlType = userType;
                 break;
 
             case 15:   //  System.Nullable`1<Double>
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetBoxedType(GetXamlTypeByName("Double"));
                 userType.BoxInstance = userType.BoxType<global::System.Double>;
                 userType.StaticInitializer = StaticInitializer_15_Nullable;
@@ -568,30 +576,30 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 16:   //  Double
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 17:   //  Microsoft.UI.Xaml.Style
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 18:   //  WinUI.TableView.TableViewColumnHeader
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
                 userType.StaticInitializer = StaticInitializer_18_TableViewColumnHeader;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 19:   //  Microsoft.UI.Xaml.Controls.ContentControl
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 20:   //  Microsoft.UI.Xaml.Visibility
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 21:   //  CommunityToolkit.WinUI.Collections.IAdvancedCollectionView
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.StaticInitializer = StaticInitializer_21_IAdvancedCollectionView;
                 userType.CollectionAdd = VectorAdd_21_IAdvancedCollectionView;
                 userType.SetIsReturnTypeStub();
@@ -599,11 +607,11 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 22:   //  Microsoft.UI.Xaml.Controls.ListViewSelectionMode
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 23:   //  WinUI.TableView.TableViewSelectionUnit
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.StaticInitializer = StaticInitializer_23_TableViewSelectionUnit;
                 userType.AddEnumValue("CellOrRow", global::WinUI.TableView.TableViewSelectionUnit.CellOrRow);
                 userType.AddEnumValue("Cell", global::WinUI.TableView.TableViewSelectionUnit.Cell);
@@ -612,20 +620,20 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 24:   //  System.Enum
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.StaticInitializer = StaticInitializer_24_Enum;
                 xamlType = userType;
                 break;
 
             case 25:   //  WinUI.TableView.TableViewTextColumn
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn"));
                 userType.Activator = Activate_25_TableViewTextColumn;
                 userType.StaticInitializer = StaticInitializer_25_TableViewTextColumn;
                 xamlType = userType;
                 break;
 
             case 26:   //  WinUI.TableView.TableViewBoundColumn
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinUI.TableView.TableViewColumn"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinUI.TableView.TableViewColumn"));
                 userType.StaticInitializer = StaticInitializer_26_TableViewBoundColumn;
                 userType.AddMemberName("Binding");
                 userType.AddMemberName("CanSort");
@@ -634,18 +642,18 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 27:   //  Microsoft.UI.Xaml.Data.Binding
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 28:   //  WinUI.TableView.TableViewNumberColumn
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn"));
                 userType.Activator = Activate_28_TableViewNumberColumn;
                 userType.StaticInitializer = StaticInitializer_28_TableViewNumberColumn;
                 xamlType = userType;
                 break;
 
             case 29:   //  kju.MainWindow
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
                 userType.Activator = Activate_29_MainWindow;
                 userType.StaticInitializer = StaticInitializer_29_MainWindow;
                 userType.AddMemberName("Cues");
@@ -655,11 +663,11 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 30:   //  Microsoft.UI.Xaml.Window
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 31:   //  System.Collections.ObjectModel.ObservableCollection`1<kju.AudioCue>
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<kju.AudioCue>"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<kju.AudioCue>"));
                 userType.StaticInitializer = StaticInitializer_31_ObservableCollection;
                 userType.CollectionAdd = VectorAdd_31_ObservableCollection;
                 userType.SetIsReturnTypeStub();
@@ -667,7 +675,7 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 32:   //  System.Collections.ObjectModel.Collection`1<kju.AudioCue>
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_32_Collection;
                 userType.StaticInitializer = StaticInitializer_32_Collection;
                 userType.CollectionAdd = VectorAdd_32_Collection;
@@ -675,7 +683,7 @@ namespace Kyoo.kju_XamlTypeInfo
                 break;
 
             case 33:   //  kju.AudioCue
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_33_AudioCue;
                 userType.StaticInitializer = StaticInitializer_33_AudioCue;
                 userType.AddMemberName("CueNumber");
@@ -683,30 +691,47 @@ namespace Kyoo.kju_XamlTypeInfo
                 userType.AddMemberName("Name");
                 userType.AddMemberName("FilePath");
                 userType.AddMemberName("Duration");
+                userType.AddMemberName("IsVideo");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 34:   //  Int32
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 35:   //  String
-                xamlType = new global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 36:   //  kju.ApplicationSettings
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.StaticInitializer = StaticInitializer_36_ApplicationSettings;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 37:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_37_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_37_TreeViewNode;
+            case 37:   //  kju.VideoWindow
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
+                userType.Activator = Activate_37_VideoWindow;
+                userType.StaticInitializer = StaticInitializer_37_VideoWindow;
+                userType.AddMemberName("MediaPlayer");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 38:   //  Windows.Media.Playback.MediaPlayer
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.StaticInitializer = StaticInitializer_38_MediaPlayer;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 39:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_39_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_39_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -718,10 +743,10 @@ namespace Kyoo.kju_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 38:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
-                userType = new global::Kyoo.kju_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_38_IList;
-                userType.CollectionAdd = VectorAdd_38_IList;
+            case 40:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.StaticInitializer = StaticInitializer_40_IList;
+                userType.CollectionAdd = VectorAdd_40_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -1151,57 +1176,67 @@ namespace Kyoo.kju_XamlTypeInfo
             var that = (global::kju.AudioCue)instance;
             that.Duration = (global::System.Double)Value;
         }
-        private object get_39_MainWindow_AppSettings(object instance)
+        private object get_39_AudioCue_IsVideo(object instance)
+        {
+            var that = (global::kju.AudioCue)instance;
+            return that.IsVideo;
+        }
+        private object get_40_MainWindow_AppSettings(object instance)
         {
             var that = (global::kju.MainWindow)instance;
             return that.AppSettings;
         }
-        private object get_40_TreeViewNode_Children(object instance)
+        private object get_41_VideoWindow_MediaPlayer(object instance)
+        {
+            var that = (global::kju.VideoWindow)instance;
+            return that.MediaPlayer;
+        }
+        private object get_42_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_41_TreeViewNode_Content(object instance)
+        private object get_43_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_41_TreeViewNode_Content(object instance, object Value)
+        private void set_43_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_42_TreeViewNode_Depth(object instance)
+        private object get_44_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_43_TreeViewNode_HasChildren(object instance)
+        private object get_45_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_44_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_46_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_44_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_46_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_45_TreeViewNode_IsExpanded(object instance)
+        private object get_47_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_45_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_47_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_46_TreeViewNode_Parent(object instance)
+        private object get_48_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1209,322 +1244,334 @@ namespace Kyoo.kju_XamlTypeInfo
 
         private global::Microsoft.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::Kyoo.kju_XamlTypeInfo.XamlMember xamlMember = null;
-            global::Kyoo.kju_XamlTypeInfo.XamlUserType userType;
+            global::kju.kju_XamlTypeInfo.XamlMember xamlMember = null;
+            global::kju.kju_XamlTypeInfo.XamlUserType userType;
 
             switch (longMemberName)
             {
             case "Microsoft.UI.Xaml.Controls.XamlControlsResources.UseCompactResources":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.XamlControlsResources");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "UseCompactResources", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.XamlControlsResources");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "UseCompactResources", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_0_XamlControlsResources_UseCompactResources;
                 xamlMember.Setter = set_0_XamlControlsResources_UseCompactResources;
                 break;
             case "WinUI.TableView.TableView.ItemsSource":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IList");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IList");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_1_TableView_ItemsSource;
                 xamlMember.Setter = set_1_TableView_ItemsSource;
                 break;
             case "WinUI.TableView.TableView.AutoGenerateColumns":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "AutoGenerateColumns", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "AutoGenerateColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_2_TableView_AutoGenerateColumns;
                 xamlMember.Setter = set_2_TableView_AutoGenerateColumns;
                 break;
             case "WinUI.TableView.TableView.Columns":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Columns", "WinUI.TableView.TableViewColumnsCollection");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Columns", "WinUI.TableView.TableViewColumnsCollection");
                 xamlMember.Getter = get_3_TableView_Columns;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinUI.TableView.TableViewColumn.Header":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Header", "Object");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Header", "Object");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_4_TableViewColumn_Header;
                 xamlMember.Setter = set_4_TableViewColumn_Header;
                 break;
             case "WinUI.TableView.TableViewColumn.Width":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Width", "Microsoft.UI.Xaml.GridLength");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Width", "Microsoft.UI.Xaml.GridLength");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_5_TableViewColumn_Width;
                 xamlMember.Setter = set_5_TableViewColumn_Width;
                 break;
             case "WinUI.TableView.TableViewColumn.MinWidth":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "MinWidth", "System.Nullable`1<Double>");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "MinWidth", "System.Nullable`1<Double>");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_6_TableViewColumn_MinWidth;
                 xamlMember.Setter = set_6_TableViewColumn_MinWidth;
                 break;
             case "WinUI.TableView.TableViewColumn.MaxWidth":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "MaxWidth", "System.Nullable`1<Double>");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "MaxWidth", "System.Nullable`1<Double>");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_7_TableViewColumn_MaxWidth;
                 xamlMember.Setter = set_7_TableViewColumn_MaxWidth;
                 break;
             case "WinUI.TableView.TableViewColumn.ActualWidth":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "ActualWidth", "Double");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "ActualWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_8_TableViewColumn_ActualWidth;
                 xamlMember.Setter = set_8_TableViewColumn_ActualWidth;
                 break;
             case "WinUI.TableView.TableViewColumn.CanResize":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CanResize", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CanResize", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_9_TableViewColumn_CanResize;
                 xamlMember.Setter = set_9_TableViewColumn_CanResize;
                 break;
             case "WinUI.TableView.TableViewColumn.IsReadOnly":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_10_TableViewColumn_IsReadOnly;
                 xamlMember.Setter = set_10_TableViewColumn_IsReadOnly;
                 break;
             case "WinUI.TableView.TableViewColumn.HeaderStyle":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "HeaderStyle", "Microsoft.UI.Xaml.Style");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "HeaderStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_11_TableViewColumn_HeaderStyle;
                 xamlMember.Setter = set_11_TableViewColumn_HeaderStyle;
                 break;
             case "WinUI.TableView.TableViewColumn.HeaderControl":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "HeaderControl", "WinUI.TableView.TableViewColumnHeader");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "HeaderControl", "WinUI.TableView.TableViewColumnHeader");
                 xamlMember.Getter = get_12_TableViewColumn_HeaderControl;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinUI.TableView.TableViewColumn.Visibility":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Visibility", "Microsoft.UI.Xaml.Visibility");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Visibility", "Microsoft.UI.Xaml.Visibility");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_13_TableViewColumn_Visibility;
                 xamlMember.Setter = set_13_TableViewColumn_Visibility;
                 break;
             case "WinUI.TableView.TableViewColumn.IsAutoGenerated":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "IsAutoGenerated", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "IsAutoGenerated", "Boolean");
                 xamlMember.Getter = get_14_TableViewColumn_IsAutoGenerated;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinUI.TableView.TableViewColumn.UseSingleElement":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "UseSingleElement", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "UseSingleElement", "Boolean");
                 xamlMember.Getter = get_15_TableViewColumn_UseSingleElement;
                 xamlMember.Setter = set_15_TableViewColumn_UseSingleElement;
                 break;
             case "WinUI.TableView.TableView.CollectionView":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CollectionView", "CommunityToolkit.WinUI.Collections.IAdvancedCollectionView");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CollectionView", "CommunityToolkit.WinUI.Collections.IAdvancedCollectionView");
                 xamlMember.Getter = get_16_TableView_CollectionView;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinUI.TableView.TableView.HeaderRowHeight":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "HeaderRowHeight", "Double");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "HeaderRowHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_17_TableView_HeaderRowHeight;
                 xamlMember.Setter = set_17_TableView_HeaderRowHeight;
                 break;
             case "WinUI.TableView.TableView.RowHeight":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "RowHeight", "Double");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "RowHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_18_TableView_RowHeight;
                 xamlMember.Setter = set_18_TableView_RowHeight;
                 break;
             case "WinUI.TableView.TableView.RowMaxHeight":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "RowMaxHeight", "Double");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "RowMaxHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_19_TableView_RowMaxHeight;
                 xamlMember.Setter = set_19_TableView_RowMaxHeight;
                 break;
             case "WinUI.TableView.TableView.SelectionMode":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "SelectionMode", "Microsoft.UI.Xaml.Controls.ListViewSelectionMode");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "SelectionMode", "Microsoft.UI.Xaml.Controls.ListViewSelectionMode");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_20_TableView_SelectionMode;
                 xamlMember.Setter = set_20_TableView_SelectionMode;
                 break;
             case "WinUI.TableView.TableView.ShowExportOptions":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "ShowExportOptions", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "ShowExportOptions", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_21_TableView_ShowExportOptions;
                 xamlMember.Setter = set_21_TableView_ShowExportOptions;
                 break;
             case "WinUI.TableView.TableView.IsReadOnly":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_22_TableView_IsReadOnly;
                 xamlMember.Setter = set_22_TableView_IsReadOnly;
                 break;
             case "WinUI.TableView.TableView.ShowOptionsButton":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "ShowOptionsButton", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "ShowOptionsButton", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_23_TableView_ShowOptionsButton;
                 xamlMember.Setter = set_23_TableView_ShowOptionsButton;
                 break;
             case "WinUI.TableView.TableView.CanResizeColumns":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CanResizeColumns", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CanResizeColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_24_TableView_CanResizeColumns;
                 xamlMember.Setter = set_24_TableView_CanResizeColumns;
                 break;
             case "WinUI.TableView.TableView.CanSortColumns":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CanSortColumns", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CanSortColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_25_TableView_CanSortColumns;
                 xamlMember.Setter = set_25_TableView_CanSortColumns;
                 break;
             case "WinUI.TableView.TableView.CanFilterColumns":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CanFilterColumns", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CanFilterColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_26_TableView_CanFilterColumns;
                 xamlMember.Setter = set_26_TableView_CanFilterColumns;
                 break;
             case "WinUI.TableView.TableView.MinColumnWidth":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "MinColumnWidth", "Double");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "MinColumnWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_27_TableView_MinColumnWidth;
                 xamlMember.Setter = set_27_TableView_MinColumnWidth;
                 break;
             case "WinUI.TableView.TableView.MaxColumnWidth":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "MaxColumnWidth", "Double");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "MaxColumnWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_28_TableView_MaxColumnWidth;
                 xamlMember.Setter = set_28_TableView_MaxColumnWidth;
                 break;
             case "WinUI.TableView.TableView.SelectionUnit":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "SelectionUnit", "WinUI.TableView.TableViewSelectionUnit");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableView");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "SelectionUnit", "WinUI.TableView.TableViewSelectionUnit");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_29_TableView_SelectionUnit;
                 xamlMember.Setter = set_29_TableView_SelectionUnit;
                 break;
             case "WinUI.TableView.TableViewBoundColumn.Binding":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Binding", "Microsoft.UI.Xaml.Data.Binding");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Binding", "Microsoft.UI.Xaml.Data.Binding");
                 xamlMember.Getter = get_30_TableViewBoundColumn_Binding;
                 xamlMember.Setter = set_30_TableViewBoundColumn_Binding;
                 break;
             case "WinUI.TableView.TableViewBoundColumn.CanSort":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CanSort", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CanSort", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_31_TableViewBoundColumn_CanSort;
                 xamlMember.Setter = set_31_TableViewBoundColumn_CanSort;
                 break;
             case "WinUI.TableView.TableViewBoundColumn.CanFilter":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CanFilter", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CanFilter", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_32_TableViewBoundColumn_CanFilter;
                 xamlMember.Setter = set_32_TableViewBoundColumn_CanFilter;
                 break;
             case "kju.MainWindow.Cues":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.MainWindow");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Cues", "System.Collections.ObjectModel.ObservableCollection`1<kju.AudioCue>");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.MainWindow");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Cues", "System.Collections.ObjectModel.ObservableCollection`1<kju.AudioCue>");
                 xamlMember.Getter = get_33_MainWindow_Cues;
                 xamlMember.SetIsReadOnly();
                 break;
             case "kju.AudioCue.CueNumber":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "CueNumber", "Int32");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "CueNumber", "Int32");
                 xamlMember.Getter = get_34_AudioCue_CueNumber;
                 xamlMember.Setter = set_34_AudioCue_CueNumber;
                 break;
             case "kju.AudioCue.Type":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Type", "String");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Type", "String");
                 xamlMember.Getter = get_35_AudioCue_Type;
                 xamlMember.Setter = set_35_AudioCue_Type;
                 break;
             case "kju.AudioCue.Name":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Name", "String");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Name", "String");
                 xamlMember.Getter = get_36_AudioCue_Name;
                 xamlMember.Setter = set_36_AudioCue_Name;
                 break;
             case "kju.AudioCue.FilePath":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "FilePath", "String");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "FilePath", "String");
                 xamlMember.Getter = get_37_AudioCue_FilePath;
                 xamlMember.Setter = set_37_AudioCue_FilePath;
                 break;
             case "kju.AudioCue.Duration":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Duration", "Double");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Duration", "Double");
                 xamlMember.Getter = get_38_AudioCue_Duration;
                 xamlMember.Setter = set_38_AudioCue_Duration;
                 break;
+            case "kju.AudioCue.IsVideo":
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "IsVideo", "Boolean");
+                xamlMember.Getter = get_39_AudioCue_IsVideo;
+                xamlMember.SetIsReadOnly();
+                break;
             case "kju.MainWindow.AppSettings":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.MainWindow");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "AppSettings", "kju.ApplicationSettings");
-                xamlMember.Getter = get_39_MainWindow_AppSettings;
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.MainWindow");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "AppSettings", "kju.ApplicationSettings");
+                xamlMember.Getter = get_40_MainWindow_AppSettings;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "kju.VideoWindow.MediaPlayer":
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.VideoWindow");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "MediaPlayer", "Windows.Media.Playback.MediaPlayer");
+                xamlMember.Getter = get_41_VideoWindow_MediaPlayer;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_40_TreeViewNode_Children;
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
+                xamlMember.Getter = get_42_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Content", "Object");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_41_TreeViewNode_Content;
-                xamlMember.Setter = set_41_TreeViewNode_Content;
+                xamlMember.Getter = get_43_TreeViewNode_Content;
+                xamlMember.Setter = set_43_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_42_TreeViewNode_Depth;
+                xamlMember.Getter = get_44_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_43_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_45_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_44_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_44_TreeViewNode_HasUnrealizedChildren;
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
+                xamlMember.Getter = get_46_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_46_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_45_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_45_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_47_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_47_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
-                userType = (global::Kyoo.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::Kyoo.kju_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_46_TreeViewNode_Parent;
+                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember.Getter = get_48_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }
@@ -1586,10 +1633,10 @@ namespace Kyoo.kju_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2411")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal partial class XamlUserType : global::Kyoo.kju_XamlTypeInfo.XamlSystemBaseType
+    internal partial class XamlUserType : global::kju.kju_XamlTypeInfo.XamlSystemBaseType
         , global::Microsoft.UI.Xaml.Markup.IXamlType
     {
-        global::Kyoo.kju_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::kju.kju_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Microsoft.UI.Xaml.Markup.IXamlType _baseType;
         global::Microsoft.UI.Xaml.Markup.IXamlType _boxedType;
         bool _isArray;
@@ -1604,7 +1651,7 @@ namespace Kyoo.kju_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::Kyoo.kju_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, 
+        public XamlUserType(global::kju.kju_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, 
             global::System.Type fullType, global::Microsoft.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
@@ -1821,7 +1868,7 @@ namespace Kyoo.kju_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal partial class XamlMember : global::Microsoft.UI.Xaml.Markup.IXamlMember
     {
-        global::Kyoo.kju_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::kju.kju_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -1830,7 +1877,7 @@ namespace Kyoo.kju_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::Kyoo.kju_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::kju.kju_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;

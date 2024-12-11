@@ -515,3 +515,8 @@ C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\qualifiers.txt
 C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\qualifiers.txt.intermediate
 C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
 C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ProjectArchitectures.txt
+C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\VideoWindow.xbf
+C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\VideoWindow.g.i.cs
+C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\VideoWindow.g.cs
+C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\VideoWindow.xaml
+C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\VideoWindow.xbf

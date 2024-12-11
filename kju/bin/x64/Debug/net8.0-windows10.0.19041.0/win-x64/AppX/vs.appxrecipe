@@ -10,14 +10,14 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>1d210e80-1198-4154-b8de-bb7c19025520</PackageIdentityName>
     <PackageIdentityPublisher>CN=DentalCow</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\git\Kyoo\Kyoo\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\git\Kyoo\Kyoo\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
+    <LayoutDir>C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
     <RegisteredManifestChecksum>25649816A85FF82DE1FEC161465A7B8E354548CF2335F77EDD5BB3C027B67097</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>1d210e80-1198-4154-b8de-bb7c19025520_1.0.0.0_x64__szkqh36r2xegm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>1d210e80-1198-4154-b8de-bb7c19025520_szkqh36r2xegm!App</RegisteredUserModeAppID>
@@ -26,28 +26,28 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\git\Kyoo\Kyoo\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-04T08:02:36.735</Modified>
+      <Modified>2024-12-08T06:04:22.011</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
+    <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-12-04T08:02:36.414</Modified>
+      <Modified>2024-12-08T05:41:23.129</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.runtimeconfig.json">
       <PackagePath>kju.runtimeconfig.json</PackagePath>
-      <Modified>2024-12-04T08:02:35.754</Modified>
+      <Modified>2024-12-04T09:55:47.955</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.dll">
+    <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.dll">
       <PackagePath>kju.dll</PackagePath>
-      <Modified>2024-12-04T08:02:34.656</Modified>
+      <Modified>2024-12-08T06:04:21.803</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>kju.exe</PackagePath>
-      <Modified>2024-12-04T08:02:34.720</Modified>
+      <Modified>2024-12-08T06:04:21.807</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\austi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -897,9 +897,9 @@
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
       <Modified>2024-07-20T08:33:44.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.deps.json">
+    <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.deps.json">
       <PackagePath>kju.deps.json</PackagePath>
-      <Modified>2024-12-04T08:02:35.599</Modified>
+      <Modified>2024-12-08T05:41:22.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\austi\.nuget\packages\communitytoolkit.winui.animations\8.0.240109\lib\net7.0-windows10.0.19041\CommunityToolkit.WinUI.Animations.pri">
       <PackagePath>CommunityToolkit.WinUI.Animations.pri</PackagePath>
@@ -925,31 +925,31 @@
       <PackagePath>WinUI.TableView.pri</PackagePath>
       <Modified>2024-11-26T13:08:42.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\git\kju\kju\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2024-11-19T06:34:32.305</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\git\kju\kju\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <Modified>2024-11-19T06:34:32.305</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\git\kju\kju\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <Modified>2024-11-19T06:34:32.305</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\git\kju\kju\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <Modified>2024-11-19T06:34:32.307</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\git\kju\kju\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <Modified>2024-11-19T06:34:32.307</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\git\kju\kju\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <Modified>2024-11-19T06:34:32.308</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\git\Kyoo\Kyoo\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\git\kju\kju\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <Modified>2024-11-19T06:34:32.309</Modified>
     </AppxPackagedFile>

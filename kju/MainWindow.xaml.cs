@@ -17,6 +17,8 @@ namespace kju
 {
     public sealed partial class MainWindow : Window
     {
+        // Add a field for the video window
+        private VideoWindow? videoWindow;
         public ObservableCollection<AudioCue> Cues { get; } = new ObservableCollection<AudioCue>();
         public ApplicationSettings AppSettings { get; private set; }
         private MediaPlayer mediaPlayer;
@@ -36,6 +38,15 @@ namespace kju
 
             mediaPlayer = new MediaPlayer();
             mediaPlayer.PlaybackSession.PositionChanged += UpdateProgressBar;
+
+            // IMPORTANT: Explicitly set initial cue index
+            currentCueIndex = Cues.Count > 0 ? 0 : -1;
+
+            // Optional: Ensure video window is closed when main window closes
+            Closed += (s, e) =>
+            {
+                videoWindow?.Close();
+            };
         }
 
         private void InitializeWindowHandling()
@@ -257,14 +268,15 @@ namespace kju
             typeComboBox.Items.Add("Music");
             typeComboBox.Items.Add("SFX");
             typeComboBox.Items.Add("Voice");
+            typeComboBox.Items.Add("Video");  // Added Video type
             typeComboBox.Items.Add("Other");
 
             dialog.Content = new StackPanel
             {
                 Children = {
-                        new TextBlock { Text = "Choose a type for these files:" },
-                        typeComboBox
-                    }
+            new TextBlock { Text = "Choose a type for these files:" },
+            typeComboBox
+        }
             };
 
             var result = await dialog.ShowAsync();
@@ -292,6 +304,7 @@ namespace kju
             }
         }
 
+        // Update AddCueWithFilePicker to include Video type
         private async Task AddCueWithFilePicker()
         {
             var dialog = new ContentDialog
@@ -311,6 +324,7 @@ namespace kju
             typeComboBox.Items.Add("Music");
             typeComboBox.Items.Add("SFX");
             typeComboBox.Items.Add("Voice");
+            typeComboBox.Items.Add("Video");  // Added Video type
             typeComboBox.Items.Add("Other");
 
             var filePickerButton = new Button
@@ -331,11 +345,15 @@ namespace kju
                 {
                     var picker = new FileOpenPicker();
                     picker.SuggestedStartLocation = PickerLocationId.MusicLibrary;
+                    // Update file type filters to include video and audio
                     picker.FileTypeFilter.Add(".mp3");
                     picker.FileTypeFilter.Add(".wav");
                     picker.FileTypeFilter.Add(".flac");
+                    picker.FileTypeFilter.Add(".mp4");
+                    picker.FileTypeFilter.Add(".avi");
+                    picker.FileTypeFilter.Add(".mov");
+                    picker.FileTypeFilter.Add(".mkv");
 
-                    // Initialize the picker with the window handle
                     WinRT.Interop.InitializeWithWindow.Initialize(picker, m_windowHandle);
 
                     selectedFile = await picker.PickSingleFileAsync();
@@ -385,12 +403,33 @@ namespace kju
             await errorDialog.ShowAsync();
         }
 
+        // Modify AddCue to set a default type
         private void AddCue(string filePath, string? type = null, string? name = null)
         {
+            // Determine type based on file extension if not provided
+            string[] videoExtensions = { ".mp4", ".avi", ".mov", ".mkv", ".wmv" };
+            string[] audioExtensions = { ".mp3", ".wav", ".flac" };
+
+            if (type == null)
+            {
+                if (videoExtensions.Any(ext => filePath.EndsWith(ext, StringComparison.OrdinalIgnoreCase)))
+                {
+                    type = "Video";
+                }
+                else if (audioExtensions.Any(ext => filePath.EndsWith(ext, StringComparison.OrdinalIgnoreCase)))
+                {
+                    type = "Audio";
+                }
+                else
+                {
+                    type = "Other";
+                }
+            }
+
             var cue = new AudioCue
             {
                 CueNumber = Cues.Count + 1,
-                Type = type ?? "Audio",
+                Type = type,
                 Name = name ?? System.IO.Path.GetFileNameWithoutExtension(filePath),
                 FilePath = filePath
             };
@@ -418,73 +457,109 @@ namespace kju
             }
         }
 
-        private async void ShowErrorMessage(string message)
-        {
-            var errorDialog = new ContentDialog
-            {
-                Title = "Error",
-                Content = message,
-                CloseButtonText = "OK",
-                XamlRoot = this.Content.XamlRoot
-            };
-
-            await errorDialog.ShowAsync();
-        }
-
+        // Update PlayPause_Click to handle video window
         private void PlayPause_Click(object sender, RoutedEventArgs e)
         {
-            var playbackState = mediaPlayer.PlaybackSession.PlaybackState;
+            if (Cues.Count == 0 || currentCueIndex < 0 || currentCueIndex >= Cues.Count) return;
 
-            if (playbackState == MediaPlaybackState.Playing)
+            var currentCue = Cues[currentCueIndex];
+
+            if (currentCue.IsVideo)
             {
-                mediaPlayer.Pause();
-                PlayPauseButton.Content = "Play";
-            }
-            else if (playbackState == MediaPlaybackState.Paused)
-            {
-                mediaPlayer.Play();
-                PlayPauseButton.Content = "Pause";
+                // Ensure video window exists
+                if (videoWindow == null)
+                {
+                    videoWindow = new VideoWindow();
+                    videoWindow.PlayVideo(currentCue.FilePath);
+                    videoWindow.Activate(); // Use Activate instead of Show
+                    PlayPauseButton.Content = "Pause";
+                    return;
+                }
+
+                // Toggle play/pause for video
+                var playbackState = videoWindow.MediaPlayer.PlaybackSession.PlaybackState;
+                if (playbackState == MediaPlaybackState.Playing)
+                {
+                    videoWindow.PauseVideo();
+                    PlayPauseButton.Content = "Play";
+                }
+                else
+                {
+                    videoWindow.ResumeVideo();
+                    PlayPauseButton.Content = "Pause";
+                }
             }
             else
             {
-                PlayAudio();
-                PlayPauseButton.Content = "Pause";
+                // Existing audio playback toggle logic
+                var playbackState = mediaPlayer.PlaybackSession.PlaybackState;
+
+                if (playbackState == MediaPlaybackState.Playing)
+                {
+                    mediaPlayer.Pause();
+                    PlayPauseButton.Content = "Play";
+                }
+                else
+                {
+                    mediaPlayer.Play();
+                    PlayPauseButton.Content = "Pause";
+                }
             }
         }
 
         private void GoMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (currentCueIndex > 0)
+            if (Cues.Count > 0) // Ensure cues exist
             {
-                currentCueIndex--;
+                currentCueIndex = Math.Max(0, currentCueIndex - 1);
                 PlayAudio();
             }
         }
 
         private void GoPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (currentCueIndex < Cues.Count - 1)
+            if (Cues.Count > 0) // Ensure cues exist
             {
-                currentCueIndex++;
+                currentCueIndex = Math.Min(Cues.Count - 1, currentCueIndex + 1);
                 PlayAudio();
             }
         }
 
+
         private void PlayAudio()
         {
-            if (Cues.Count > 0)
+            if (Cues == null || Cues.Count == 0)
             {
-                if (currentCueIndex == -1 && Cues.Count > 0)
-                {
-                    currentCueIndex = 0;
-                }
+                ShowErrorMessage("No cues available to play.");
+                return;
+            }
 
-                if (currentCueIndex >= 0 && currentCueIndex < Cues.Count)
+            // Ensure valid index
+            if (currentCueIndex < 0) currentCueIndex = 0;
+            if (currentCueIndex >= Cues.Count) currentCueIndex = Cues.Count - 1;
+
+            // Add the missing closing brace here
+        }
+
+        // Helper method to show error messages
+        private async void ShowErrorMessage(string message)
+        {
+            try
+            {
+                var errorDialog = new ContentDialog
                 {
-                    mediaPlayer.Source = MediaSource.CreateFromUri(new Uri(Cues[currentCueIndex].FilePath));
-                    mediaPlayer.Play();
-                    PlayPauseButton.Content = "Pause";
-                }
+                    Title = "Playback Error",
+                    Content = message,
+                    CloseButtonText = "OK",
+                    XamlRoot = this.Content.XamlRoot
+                };
+
+                await errorDialog.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                // Fallback error logging if dialog fails
+                System.Diagnostics.Debug.WriteLine($"ERROR showing error dialog: {ex.Message}");
             }
         }
 
@@ -515,6 +590,12 @@ namespace kju
                 });
             }
         }
+        // You might want to add a method to close the video window explicitly
+        private void CloseVideoWindow()
+        {
+            videoWindow?.Close();
+            videoWindow = null;
+        }
     }
 
     public class AudioCue
@@ -524,6 +605,17 @@ namespace kju
         public string Name { get; set; } = string.Empty;
         public string FilePath { get; set; } = string.Empty;
         public double Duration { get; set; }
+
+        // Add this property to determine if the cue is a video
+        public bool IsVideo
+        {
+            get
+            {
+                // Add video file extensions
+                string[] videoExtensions = { ".mp4", ".avi", ".mov", ".mkv", ".wmv" };
+                return videoExtensions.Any(ext => FilePath.EndsWith(ext, StringComparison.OrdinalIgnoreCase));
+            }
+        }
     }
 
     public class ApplicationSettings
