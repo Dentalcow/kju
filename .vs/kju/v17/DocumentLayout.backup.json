@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\git\\kju\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|c:\\git\\kju\\kju\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|solutionrelative:kju\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|c:\\git\\kju\\kju\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|solutionrelative:kju\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|c:\\git\\kju\\kju\\videowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|solutionrelative:kju\\videowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|c:\\git\\kju\\kju\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB89E0AB-FDAA-4ACF-A480-AA0388640890}|kju\\kju.csproj|solutionrelative:kju\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "VideoWindow.xaml",
               "DocumentMoniker": "C:\\git\\kju\\kju\\VideoWindow.xaml",
               "RelativeDocumentMoniker": "kju\\VideoWindow.xaml",
@@ -43,12 +43,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\git\\kju\\kju\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "kju\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\git\\kju\\kju\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "kju\\MainWindow.xaml.cs*",
+              "ToolTip": "C:\\git\\kju\\kju\\MainWindow.xaml.cs",
+              "RelativeToolTip": "kju\\MainWindow.xaml.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAiwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T05:15:02.298Z",
@@ -56,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "VideoWindow.xaml.cs",
               "DocumentMoniker": "C:\\git\\kju\\kju\\VideoWindow.xaml.cs",
               "RelativeDocumentMoniker": "kju\\VideoWindow.xaml.cs",
@@ -69,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\git\\kju\\kju\\MainWindow.xaml",
               "RelativeDocumentMoniker": "kju\\MainWindow.xaml",
               "ToolTip": "C:\\git\\kju\\kju\\MainWindow.xaml",
               "RelativeToolTip": "kju\\MainWindow.xaml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-08T05:12:03.813Z",
               "EditorCaption": ""
