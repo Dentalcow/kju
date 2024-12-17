@@ -226,7 +226,7 @@ namespace kju.kju_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[41];
+            _typeNameTable = new string[40];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -255,21 +255,20 @@ namespace kju.kju_XamlTypeInfo
             _typeNameTable[25] = "WinUI.TableView.TableViewTextColumn";
             _typeNameTable[26] = "WinUI.TableView.TableViewBoundColumn";
             _typeNameTable[27] = "Microsoft.UI.Xaml.Data.Binding";
-            _typeNameTable[28] = "WinUI.TableView.TableViewNumberColumn";
-            _typeNameTable[29] = "kju.MainWindow";
-            _typeNameTable[30] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[31] = "System.Collections.ObjectModel.ObservableCollection`1<kju.AudioCue>";
-            _typeNameTable[32] = "System.Collections.ObjectModel.Collection`1<kju.AudioCue>";
-            _typeNameTable[33] = "kju.AudioCue";
-            _typeNameTable[34] = "Int32";
-            _typeNameTable[35] = "String";
-            _typeNameTable[36] = "kju.ApplicationSettings";
-            _typeNameTable[37] = "kju.VideoWindow";
-            _typeNameTable[38] = "Windows.Media.Playback.MediaPlayer";
-            _typeNameTable[39] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[40] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[28] = "kju.MainWindow";
+            _typeNameTable[29] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[30] = "System.Collections.ObjectModel.ObservableCollection`1<kju.AudioCue>";
+            _typeNameTable[31] = "System.Collections.ObjectModel.Collection`1<kju.AudioCue>";
+            _typeNameTable[32] = "kju.AudioCue";
+            _typeNameTable[33] = "Int32";
+            _typeNameTable[34] = "String";
+            _typeNameTable[35] = "kju.ApplicationSettings";
+            _typeNameTable[36] = "kju.VideoWindow";
+            _typeNameTable[37] = "Windows.Media.Playback.MediaPlayer";
+            _typeNameTable[38] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[39] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[41];
+            _typeTable = new global::System.Type[40];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -298,19 +297,18 @@ namespace kju.kju_XamlTypeInfo
             _typeTable[25] = typeof(global::WinUI.TableView.TableViewTextColumn);
             _typeTable[26] = typeof(global::WinUI.TableView.TableViewBoundColumn);
             _typeTable[27] = typeof(global::Microsoft.UI.Xaml.Data.Binding);
-            _typeTable[28] = typeof(global::WinUI.TableView.TableViewNumberColumn);
-            _typeTable[29] = typeof(global::kju.MainWindow);
-            _typeTable[30] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[31] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::kju.AudioCue>);
-            _typeTable[32] = typeof(global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>);
-            _typeTable[33] = typeof(global::kju.AudioCue);
-            _typeTable[34] = typeof(global::System.Int32);
-            _typeTable[35] = typeof(global::System.String);
-            _typeTable[36] = typeof(global::kju.ApplicationSettings);
-            _typeTable[37] = typeof(global::kju.VideoWindow);
-            _typeTable[38] = typeof(global::Windows.Media.Playback.MediaPlayer);
-            _typeTable[39] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[40] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[28] = typeof(global::kju.MainWindow);
+            _typeTable[29] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[30] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::kju.AudioCue>);
+            _typeTable[31] = typeof(global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>);
+            _typeTable[32] = typeof(global::kju.AudioCue);
+            _typeTable[33] = typeof(global::System.Int32);
+            _typeTable[34] = typeof(global::System.String);
+            _typeTable[35] = typeof(global::kju.ApplicationSettings);
+            _typeTable[36] = typeof(global::kju.VideoWindow);
+            _typeTable[37] = typeof(global::Windows.Media.Playback.MediaPlayer);
+            _typeTable[38] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[39] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -352,15 +350,14 @@ namespace kju.kju_XamlTypeInfo
         private object Activate_10_Collection() { return new global::System.Collections.ObjectModel.Collection<global::WinUI.TableView.TableViewColumn>(); }
         private object Activate_18_TableViewColumnHeader() { return new global::WinUI.TableView.TableViewColumnHeader(); }
         private object Activate_25_TableViewTextColumn() { return new global::WinUI.TableView.TableViewTextColumn(); }
-        private object Activate_28_TableViewNumberColumn() { return new global::WinUI.TableView.TableViewNumberColumn(); }
-        private object Activate_29_MainWindow() { return new global::kju.MainWindow(); }
-        private object Activate_31_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::kju.AudioCue>(); }
-        private object Activate_32_Collection() { return new global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>(); }
-        private object Activate_33_AudioCue() { return new global::kju.AudioCue(); }
-        private object Activate_36_ApplicationSettings() { return new global::kju.ApplicationSettings(); }
-        private object Activate_37_VideoWindow() { return new global::kju.VideoWindow(); }
-        private object Activate_38_MediaPlayer() { return new global::Windows.Media.Playback.MediaPlayer(); }
-        private object Activate_39_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_28_MainWindow() { return new global::kju.MainWindow(); }
+        private object Activate_30_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::kju.AudioCue>(); }
+        private object Activate_31_Collection() { return new global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>(); }
+        private object Activate_32_AudioCue() { return new global::kju.AudioCue(); }
+        private object Activate_35_ApplicationSettings() { return new global::kju.ApplicationSettings(); }
+        private object Activate_36_VideoWindow() { return new global::kju.VideoWindow(); }
+        private object Activate_37_MediaPlayer() { return new global::Windows.Media.Playback.MediaPlayer(); }
+        private object Activate_38_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_TableView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI.TableView.TableView).TypeHandle);
         private void StaticInitializer_7_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IList).TypeHandle);
@@ -377,16 +374,15 @@ namespace kju.kju_XamlTypeInfo
         private void StaticInitializer_24_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
         private void StaticInitializer_25_TableViewTextColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI.TableView.TableViewTextColumn).TypeHandle);
         private void StaticInitializer_26_TableViewBoundColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI.TableView.TableViewBoundColumn).TypeHandle);
-        private void StaticInitializer_28_TableViewNumberColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI.TableView.TableViewNumberColumn).TypeHandle);
-        private void StaticInitializer_29_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.MainWindow).TypeHandle);
-        private void StaticInitializer_31_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::kju.AudioCue>).TypeHandle);
-        private void StaticInitializer_32_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>).TypeHandle);
-        private void StaticInitializer_33_AudioCue() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.AudioCue).TypeHandle);
-        private void StaticInitializer_36_ApplicationSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.ApplicationSettings).TypeHandle);
-        private void StaticInitializer_37_VideoWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.VideoWindow).TypeHandle);
-        private void StaticInitializer_38_MediaPlayer() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.Media.Playback.MediaPlayer).TypeHandle);
-        private void StaticInitializer_39_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_40_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_28_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.MainWindow).TypeHandle);
+        private void StaticInitializer_30_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::kju.AudioCue>).TypeHandle);
+        private void StaticInitializer_31_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::kju.AudioCue>).TypeHandle);
+        private void StaticInitializer_32_AudioCue() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.AudioCue).TypeHandle);
+        private void StaticInitializer_35_ApplicationSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.ApplicationSettings).TypeHandle);
+        private void StaticInitializer_36_VideoWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::kju.VideoWindow).TypeHandle);
+        private void StaticInitializer_37_MediaPlayer() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.Media.Playback.MediaPlayer).TypeHandle);
+        private void StaticInitializer_38_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_39_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -418,19 +414,19 @@ namespace kju.kju_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_31_ObservableCollection(object instance, object item)
+        private void VectorAdd_30_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::kju.AudioCue>)instance;
             var newItem = (global::kju.AudioCue)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_32_Collection(object instance, object item)
+        private void VectorAdd_31_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::kju.AudioCue>)instance;
             var newItem = (global::kju.AudioCue)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_40_IList(object instance, object item)
+        private void VectorAdd_39_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -645,92 +641,84 @@ namespace kju.kju_XamlTypeInfo
                 xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 28:   //  WinUI.TableView.TableViewNumberColumn
-                userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinUI.TableView.TableViewBoundColumn"));
-                userType.Activator = Activate_28_TableViewNumberColumn;
-                userType.StaticInitializer = StaticInitializer_28_TableViewNumberColumn;
-                xamlType = userType;
-                break;
-
-            case 29:   //  kju.MainWindow
+            case 28:   //  kju.MainWindow
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_29_MainWindow;
-                userType.StaticInitializer = StaticInitializer_29_MainWindow;
+                userType.Activator = Activate_28_MainWindow;
+                userType.StaticInitializer = StaticInitializer_28_MainWindow;
                 userType.AddMemberName("Cues");
                 userType.AddMemberName("AppSettings");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 30:   //  Microsoft.UI.Xaml.Window
+            case 29:   //  Microsoft.UI.Xaml.Window
                 xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 31:   //  System.Collections.ObjectModel.ObservableCollection`1<kju.AudioCue>
+            case 30:   //  System.Collections.ObjectModel.ObservableCollection`1<kju.AudioCue>
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<kju.AudioCue>"));
-                userType.StaticInitializer = StaticInitializer_31_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_31_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_30_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_30_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 32:   //  System.Collections.ObjectModel.Collection`1<kju.AudioCue>
+            case 31:   //  System.Collections.ObjectModel.Collection`1<kju.AudioCue>
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_32_Collection;
-                userType.StaticInitializer = StaticInitializer_32_Collection;
-                userType.CollectionAdd = VectorAdd_32_Collection;
+                userType.Activator = Activate_31_Collection;
+                userType.StaticInitializer = StaticInitializer_31_Collection;
+                userType.CollectionAdd = VectorAdd_31_Collection;
                 xamlType = userType;
                 break;
 
-            case 33:   //  kju.AudioCue
+            case 32:   //  kju.AudioCue
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_33_AudioCue;
-                userType.StaticInitializer = StaticInitializer_33_AudioCue;
+                userType.Activator = Activate_32_AudioCue;
+                userType.StaticInitializer = StaticInitializer_32_AudioCue;
                 userType.AddMemberName("CueNumber");
                 userType.AddMemberName("Type");
                 userType.AddMemberName("Name");
                 userType.AddMemberName("FilePath");
-                userType.AddMemberName("Duration");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 34:   //  Int32
+            case 33:   //  Int32
                 xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 35:   //  String
+            case 34:   //  String
                 xamlType = new global::kju.kju_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 36:   //  kju.ApplicationSettings
+            case 35:   //  kju.ApplicationSettings
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_36_ApplicationSettings;
+                userType.StaticInitializer = StaticInitializer_35_ApplicationSettings;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 37:   //  kju.VideoWindow
+            case 36:   //  kju.VideoWindow
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_37_VideoWindow;
-                userType.StaticInitializer = StaticInitializer_37_VideoWindow;
+                userType.Activator = Activate_36_VideoWindow;
+                userType.StaticInitializer = StaticInitializer_36_VideoWindow;
                 userType.AddMemberName("MediaPlayer");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 38:   //  Windows.Media.Playback.MediaPlayer
+            case 37:   //  Windows.Media.Playback.MediaPlayer
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_38_MediaPlayer;
+                userType.StaticInitializer = StaticInitializer_37_MediaPlayer;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 39:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 38:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_39_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_39_TreeViewNode;
+                userType.Activator = Activate_38_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_38_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -742,10 +730,10 @@ namespace kju.kju_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 40:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 39:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::kju.kju_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_40_IList;
-                userType.CollectionAdd = VectorAdd_40_IList;
+                userType.StaticInitializer = StaticInitializer_39_IList;
+                userType.CollectionAdd = VectorAdd_39_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -1165,72 +1153,62 @@ namespace kju.kju_XamlTypeInfo
             var that = (global::kju.AudioCue)instance;
             that.FilePath = (global::System.String)Value;
         }
-        private object get_38_AudioCue_Duration(object instance)
-        {
-            var that = (global::kju.AudioCue)instance;
-            return that.Duration;
-        }
-        private void set_38_AudioCue_Duration(object instance, object Value)
-        {
-            var that = (global::kju.AudioCue)instance;
-            that.Duration = (global::System.Double)Value;
-        }
-        private object get_39_MainWindow_AppSettings(object instance)
+        private object get_38_MainWindow_AppSettings(object instance)
         {
             var that = (global::kju.MainWindow)instance;
             return that.AppSettings;
         }
-        private object get_40_VideoWindow_MediaPlayer(object instance)
+        private object get_39_VideoWindow_MediaPlayer(object instance)
         {
             var that = (global::kju.VideoWindow)instance;
             return that.MediaPlayer;
         }
-        private object get_41_TreeViewNode_Children(object instance)
+        private object get_40_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_42_TreeViewNode_Content(object instance)
+        private object get_41_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_42_TreeViewNode_Content(object instance, object Value)
+        private void set_41_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_43_TreeViewNode_Depth(object instance)
+        private object get_42_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_44_TreeViewNode_HasChildren(object instance)
+        private object get_43_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_45_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_44_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_45_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_44_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_46_TreeViewNode_IsExpanded(object instance)
+        private object get_45_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_46_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_45_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_47_TreeViewNode_Parent(object instance)
+        private object get_46_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1498,68 +1476,62 @@ namespace kju.kju_XamlTypeInfo
                 xamlMember.Getter = get_37_AudioCue_FilePath;
                 xamlMember.Setter = set_37_AudioCue_FilePath;
                 break;
-            case "kju.AudioCue.Duration":
-                userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.AudioCue");
-                xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Duration", "Double");
-                xamlMember.Getter = get_38_AudioCue_Duration;
-                xamlMember.Setter = set_38_AudioCue_Duration;
-                break;
             case "kju.MainWindow.AppSettings":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.MainWindow");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "AppSettings", "kju.ApplicationSettings");
-                xamlMember.Getter = get_39_MainWindow_AppSettings;
+                xamlMember.Getter = get_38_MainWindow_AppSettings;
                 xamlMember.SetIsReadOnly();
                 break;
             case "kju.VideoWindow.MediaPlayer":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("kju.VideoWindow");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "MediaPlayer", "Windows.Media.Playback.MediaPlayer");
-                xamlMember.Getter = get_40_VideoWindow_MediaPlayer;
+                xamlMember.Getter = get_39_VideoWindow_MediaPlayer;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_41_TreeViewNode_Children;
+                xamlMember.Getter = get_40_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_42_TreeViewNode_Content;
-                xamlMember.Setter = set_42_TreeViewNode_Content;
+                xamlMember.Getter = get_41_TreeViewNode_Content;
+                xamlMember.Setter = set_41_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_43_TreeViewNode_Depth;
+                xamlMember.Getter = get_42_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_44_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_43_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_45_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_45_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_44_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_44_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_46_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_46_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_45_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_45_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::kju.kju_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::kju.kju_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_47_TreeViewNode_Parent;
+                xamlMember.Getter = get_46_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-08T07:18:30.783</Modified>
+      <Modified>2024-12-11T07:50:37.237</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-12-08T07:18:30.609</Modified>
+      <Modified>2024-12-11T07:50:36.980</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.runtimeconfig.json">
       <PackagePath>kju.runtimeconfig.json</PackagePath>
-      <Modified>2024-12-04T09:55:47.955</Modified>
+      <Modified>2024-12-11T05:51:23.724</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.dll">
       <PackagePath>kju.dll</PackagePath>
-      <Modified>2024-12-08T07:18:30.509</Modified>
+      <Modified>2024-12-11T07:50:36.674</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\kju\kju\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>kju.exe</PackagePath>
-      <Modified>2024-12-08T07:18:30.518</Modified>
+      <Modified>2024-12-11T07:50:36.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\austi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -899,7 +899,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\kju\kju\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\kju.deps.json">
       <PackagePath>kju.deps.json</PackagePath>
-      <Modified>2024-12-08T06:19:30.747</Modified>
+      <Modified>2024-12-11T06:05:47.444</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\austi\.nuget\packages\communitytoolkit.winui.animations\8.0.240109\lib\net7.0-windows10.0.19041\CommunityToolkit.WinUI.Animations.pri">
       <PackagePath>CommunityToolkit.WinUI.Animations.pri</PackagePath>

@@ -2,8 +2,9 @@
     x:Class="kju.VideoWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Video Playback">
+    Title="Media Playback">
     <Grid>
-        <MediaPlayerElement x:Name="VideoPlayer" AutoPlay="True" Stretch="Uniform" />
+        <MediaPlayerElement x:Name="VideoPlayer" AutoPlay="True" Stretch="Uniform" x:FieldModifier="public" />
+        <Image x:Name="ImageDisplay" Stretch="Uniform" Visibility="Collapsed" x:FieldModifier="public" />
     </Grid>
 </Window>

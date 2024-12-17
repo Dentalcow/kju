@@ -63,7 +63,6 @@
                         <tableView:TableViewTextColumn Header="Type" Binding="{Binding Type}" />
                         <tableView:TableViewTextColumn Header="Name" Binding="{Binding Name}" />
                         <tableView:TableViewTextColumn Header="File Path" Binding="{Binding FilePath}" />
-                        <tableView:TableViewNumberColumn Header="Duration (sec)" Binding="{Binding Duration}" />
                     </tableView:TableView.Columns>
                 </tableView:TableView>
             </Border>
@@ -92,6 +91,10 @@
                         <Button x:Name="GoPlusButton" 
                                 Content="Next" 
                                 Click="GoPlus_Click"/>
+                        <Button x:Name="FullscreenButton" 
+        Content="Fullscreen" 
+        Click="Fullscreen_Click" 
+        Margin="10,0,0,0"/>
                     </StackPanel>
 
                     <Grid Grid.Row="1" Margin="0,10,0,0">
